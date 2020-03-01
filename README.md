@@ -1,27 +1,27 @@
-# sbol-visual-client
-This page provides examples to use the SBOL Visual Ontology web service (SBOL VOWS) remotely. Examples are provided in both Python and Java. The source code of the examples are also available in this GitHub repository.
+# Programmatic access to the SBOL Visual Ontology web service (SBOL-VOWS)
+This page provides examples to use the SBOL Visual Ontology web service (SBOL VOWS) remotely. Examples are provided in both Python and Java programming languages. The source code for examples is available in this GitHub repository.
 
-## Accessing the glyph interface
-SBOL-VOWS acts an image service using the `glyph` interface. Images are directly resolved via HTTP and hence there is no special API for accessing the glyphs. E.g. https://vows.sbolstandard.org/glyph/AptamerGlyph resolves the glyph URL http://synbiodex.github.io/SBOL-visual/Glyphs/aptamer/aptamer-specification.png.
+## Accessing the ```glyph``` interface
+SBOL-VOWS acts an image service using the `glyph` interface. Images are directly resolved via HTTP. Hence, there is no special API required when accessing the glyphs via the ```query``` interface. E.g. https://vows.sbolstandard.org/glyph/AptamerGlyph resolves the glyph URL http://synbiodex.github.io/SBOL-visual/Glyphs/aptamer/aptamer-specification.png.
 
 ## Accessing information about glyphs
-SBOL-VOWS can be used to search for suitable glyphs and to return metadadata about these glyphs. Textual information about glyphs are returned as RDF graphs. Hence, any RDF library can be used to process this information. Please note that SBOL VOWS uses RDF-JSON as the default RDF format. 
+SBOL-VOWS can be used to search for suitable glyphs and to return metadadata about these glyphs. Textual information about glyphs are returned as RDF graphs. Hence, any RDF library can be used to process this information. Please note that SBOL VOWS uses RDF/JSON as the default RDF format. Although, RDF libraries can be used as default, JSON libraries can also be used to access the information. 
 
 ### Prerequisites for the Python examples
-Examples provided below depend on RDFLib, a widely used RDF library. To try out the exmaples, please first install RDFLib.
+The Python examples provided below depend on RDFLib, a widely used RDF library. To try out the exmaples, please first install RDFLib.
 ```
 python3 install rdflib 
 ```
 
-Then install the rdfjson module for RDFlib.
+Then install the ```rdfjson``` module for RDFlib.
 ```
 git clone https://github.com/RDFLib/rdflib-rdfjson.git
 cd rdflib-rdfjson
 python3 setup.py install
 ```
 
-### Mapping examples
-The following example shows how to retrive information about the recommended glyph when the query term used is SO:0000031 (the Aptamer term from the Sequence Ontology).
+### ```Mapping``` examples
+The following examples show how to retrive information about the recommended glyph when the query term used is ```SO:0000031``` (the Aptamer term from the Sequence Ontology).
 
 **Python**:
 ```python
@@ -34,13 +34,12 @@ def printGlyphProperties(g):
         print ("File: " + g.value(glyph,SBOLVO.defaultGlyph))
         print ("Directory: " + g.value(glyph,SBOLVO.glyphDirectory))  
         print ("----------")  
-        
-        
+               
 g = rdflib.Graph()
 g.parse("https://vows.sbolstandard.org/mapping/SO:0000031",format="rdf-json")
 printGlyphProperties(g)
 ```
-**Java**
+**Java:**
 ```Java
 Model g = ModelFactory.createDefaultModel();
 g.read("https://vows.sbolstandard.org/mapping/SO:0000031", "RDF/JSON");
@@ -69,8 +68,8 @@ private static void printGlyphProperties(Model g){
 }
 ```
 
-### Query examples
-The following example shows how information about glyphs that can be used to represent interactions can be retrieved.
+### ```Query``` examples
+The following examples show how to retrieve information about glyphs that can be used to represent interactions.
 
 **Python**:
 ```python
@@ -85,8 +84,8 @@ g.read("https://vows.sbolstandard.org/query/SBO:0000231","RDF/JSON");
 printGlyphProperties(g);
 ```        
 
-### Metadata examples
-The following example shows how metadata about the CDGlyph term can be retrieved.
+### ```Metadata``` examples
+The following examples show how to retrieve metadata about the CDGlyph term.
 
 **Python**:
 ```python
