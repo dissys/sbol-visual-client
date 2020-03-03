@@ -5,10 +5,10 @@ This repository provides examples to use the SBOL Visual Ontology web service (S
 SBOL-VOWS acts an image service using the `glyph` interface. Images are directly resolved via HTTP. Hence, there is no special API required when accessing the glyphs via the ```query``` interface. E.g. https://vows.sbolstandard.org/glyph/AptamerGlyph resolves the glyph URL http://synbiodex.github.io/SBOL-visual/Glyphs/aptamer/aptamer-specification.png.
 
 ## Accessing information about glyphs
-SBOL-VOWS can be used to search for suitable glyphs and to return metadadata about these glyphs. Textual information about glyphs are returned as RDF graphs. Hence, any RDF library can be used to process this information. Please note that SBOL VOWS uses RDF/JSON as the default RDF format. Although, RDF libraries can be used as default, JSON libraries can also be used to access the information. 
+SBOL-VOWS can be used to search for suitable glyphs and to return metadadata about these glyphs. Textual information about glyphs are returned as RDF graphs. Hence, any RDF library can be used to process this information. Please note that SBOL VOWS uses RDF/JSON as the default RDF format. Hence, both RDF and JSON libraries can be used to access information.
 
 ### Prerequisites for the Python examples
-The Python examples provided below depend on RDFLib, a widely used RDF library. To try out the exmaples, please first install RDFLib.
+The Python examples provided below depend on RDFLib, a widely used RDF library. To try out the examples, please first install RDFLib.
 ```
 python3 install rdflib 
 ```
