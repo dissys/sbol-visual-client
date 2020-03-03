@@ -85,7 +85,7 @@ printGlyphProperties(g);
 ```        
 
 ### ```Metadata``` examples
-The following examples show how to retrieve metadata about the CDGlyph term.
+The following examples show how to retrieve metadata about the CDSGlyph term.
 
 **Python**:
 ```python
