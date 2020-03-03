@@ -1,5 +1,5 @@
 # Programmatic access to the SBOL Visual Ontology web service (SBOL-VOWS)
-This page provides examples to use the SBOL Visual Ontology web service (SBOL VOWS) remotely. Examples are provided in both Python and Java programming languages. The source code for examples is available in this GitHub repository.
+This repository provides examples to use the SBOL Visual Ontology web service (SBOL-VOWS) remotely. Examples are provided in both Python and Java programming languages.
 
 ## Accessing the ```glyph``` interface
 SBOL-VOWS acts an image service using the `glyph` interface. Images are directly resolved via HTTP. Hence, there is no special API required when accessing the glyphs via the ```query``` interface. E.g. https://vows.sbolstandard.org/glyph/AptamerGlyph resolves the glyph URL http://synbiodex.github.io/SBOL-visual/Glyphs/aptamer/aptamer-specification.png.
